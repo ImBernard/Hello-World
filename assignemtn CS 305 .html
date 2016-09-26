@@ -1,0 +1,97 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+</script>
+<script> //Jquiry
+$(document).ready(function(){
+    $("#register").hide();
+    $("#login").show();
+    $("#admin").hide();
+    $("#hide").click(function(){
+        $("#login").hide();
+        //$("#admin").hide();
+        $("#register").show();
+    });
+    $("#show").click(function(){
+        $("#login").show();
+        $("#register").hide();
+        //$("#admin").hide();
+    });
+});
+</script>
+<script type="text/javascript">//Java script
+//valiable for admin
+//valiable for data
+
+var accounts = {dataAcc: [
+            {username: "admin", password: "adminpass"},
+            {username: "gel", password: "gelpass"}
+        ]};
+function login(){
+ alert("Hello");
+ document.getElementById("demo").innerHTML="Hello";
+}
+</script>
+<style>
+.button {
+  padding: 10px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(10px);
+}
+.div
+{
+
+}
+</style>
+</head>
+<body>
+<div id="login" ng-app="">  
+<center>
+<form action="action_page.php">
+  ID number:<br>
+  <input type="text" id="idn" placeholder="Enter ID number">
+  <br>
+  Password:<br>
+  <input type="text" c placeholder="Enter password">
+  <br><br>
+</form>
+
+  <button class="button" button id="adm" button onclick="Login()">Log-in</button>
+  <button class="button" button id="hide">Register</button>
+</center>
+<p id="demo"></p>
+
+</div>
+<center>
+<div id="register">
+  <form action="action_page.php">
+  ID number:<br>
+  <input type="text" id="idn1" placeholder="Enter ID number">
+  <br>
+  Password:<br>
+  <input type="text" id="pass" placeholder="Enter password">
+  <br><br>
+</form>
+  <button class="button" onclick="register(lname)" button id="show">Submit</button>
+</div>
+</center>
+
+
+
+</body>
+</html>
