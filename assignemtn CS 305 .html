@@ -1,35 +1,33 @@
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+<script src="jquery.min.js">
 </script>
 <script> //Jquiry
 $(document).ready(function(){
     $("#register").hide();
     $("#login").show();
-    $("#admin").hide();
     $("#hide").click(function(){
         $("#login").hide();
-        //$("#admin").hide();
         $("#register").show();
     });
     $("#show").click(function(){
         $("#login").show();
         $("#register").hide();
-        //$("#admin").hide();
-    });
-});
+     });
+   });
 </script>
-<script type="text/javascript">//Java script
-//valiable for admin
-//valiable for data
+<script type="text/javascript">
 
 var accounts = {dataAcc: [
             {username: "admin", password: "adminpass"},
             {username: "gel", password: "gelpass"}
         ]};
-function login(){
- alert("Hello");
- document.getElementById("demo").innerHTML="Hello";
+
+function log(){
+   alert("The user name and password is not in the record");
+}
+function regis(){
+  alert("You are successfully registered :D");
 }
 </script>
 <style>
@@ -58,40 +56,71 @@ function login(){
 
 }
 </style>
-</head>
 <body>
-<div id="login" ng-app="">  
+<div id="login">  
 <center>
-<form action="action_page.php">
   ID number:<br>
-  <input type="text" id="idn" placeholder="Enter ID number">
+  <input type="text" id="idn" placeholder="Enter ID number" >
   <br>
   Password:<br>
-  <input type="text" c placeholder="Enter password">
+  <input id="Passwd" name="Passwd" type="password" placeholder="Enter Password" class="" >
   <br><br>
-</form>
-
-  <button class="button" button id="adm" button onclick="Login()">Log-in</button>
+  <button class="button" button id="adm" onclick="log()">Log-in</button>
   <button class="button" button id="hide">Register</button>
 </center>
-<p id="demo"></p>
-
 </div>
+
 <center>
 <div id="register">
-  <form action="action_page.php">
-  ID number:<br>
-  <input type="text" id="idn1" placeholder="Enter ID number">
-  <br>
-  Password:<br>
-  <input type="text" id="pass" placeholder="Enter password">
-  <br><br>
-</form>
-  <button class="button" onclick="register(lname)" button id="show">Submit</button>
-</div>
+      <table border=0>
+            <tr>
+               <th>
+                  First name:<br>
+                  <input type="text" id="fname" placeholder="Enter first name">
+                  <br>
+                  Last name:<br>
+                  <input type="text" id="lname" placeholder="Enter Last name">
+                  <br>
+                  Middle name:<br>
+                  <input type="text" id="mname" placeholder="Enter Middle name">
+                  <br>
+                  E-mail Address:<br>
+                  <input type="text" id="EmailAdd" placeholder="Enter E-mail address">
+                  <br>
+                  Cellpone Number:<br>
+                  <input type="text" id="cpnumber" placeholder="Enter the active cellphone number">
+                  <br>
+                  <b>Gender</b><br>
+                      <input type="radio" name="gender" value="male"> Male<br>
+                      <input type="radio" name="gender" value="female"> Female<br>
+                  <br>
+               </th>
+               <th>
+                    Password:<br>
+                    <input id="Passwd" name="Passwd" type="password" placeholder="Password" class="" >
+                    <br>
+                    Comform Password:<br>
+                    <input id="Passwd" name="Passwd" type="password" placeholder="Conform password" class="" >
+                    <br>
+                    Birthday:<br>
+                    <input type="text" id="pass" placeholder="Enter Birthday"> 
+                    <br>
+                    Age:<br>
+                    <input type="text" id="pass" placeholder="Enter Age"> 
+                    <br>
+                    Address:<br>
+                    <input type="text" id="pass" placeholder="Enter Address"> 
+                    <br>
+               </th>
+            </tr>
+            <tr>
+              <th colspan="2">
+                <button class="button" onclick="regis()" button id="show">Submit</button>
+              </th>
+            </tr>
+      </table>
+  </div>
 </center>
-
-
-
 </body>
+</head>
 </html>
