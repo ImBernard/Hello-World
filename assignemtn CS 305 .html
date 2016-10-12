@@ -5,29 +5,59 @@
 <script> //Jquiry
 $(document).ready(function(){
     $("#register").hide();
+    $("#record").hide();
     $("#login").show();
     $("#hide").click(function(){
         $("#login").hide();
+        $("#record").hide();
         $("#register").show();
-    });
+    });//end of hide function
     $("#show").click(function(){
         $("#login").show();
         $("#register").hide();
-     });
+        $("#record").hide();
+     });//end of show register form
+    $("#adm").click(function(){
+        $("#login").hide();
+        $("#register").hide();
+        $("#record").show();
+    });//end of show dashboard form
+    $("#Back").click(function(){
+         $("#register").hide();
+         $("#record").hide();
+         $("#login").show();
+    });//end of dachboard
    });
 </script>
-<script type="text/javascript">
-
-var accounts = {dataAcc: [
-            {username: "admin", password: "adminpass"},
-            {username: "gel", password: "gelpass"}
-        ]};
-
-function log(){
-   alert("The user name and password is not in the record");
+<script>//javascript
+var items = [];
+var wee;
+function log(idn,Passwd){
+  
+   result()
+ 
+}//end login
+function regis(fname,lname,mname,Passwd){
+  wee ={
+    "fname": document.getElementById("fname").value,
+    "lname" : document.getElementById("lname").value,
+    "mname" : document.getElementById("mname").value,
+    "pass" : document.getElementById("Passwd").value
+   };
+  items.push(wee);
+   alert("You are successfully registered :D");
 }
-function regis(){
-  alert("You are successfully registered :D");
+function result(){
+  var arr_len = items.length;
+  for(var x=0; x<arr_len; x++){
+            var fn = items[x]['fname'];
+            var ln = items[x]['lname'];
+            var mn = items[x]['mname'];
+            var pw = items[x]['pass'];
+            
+            //append to results div to display
+            $("#wee").append("firstname: " + fn + "    lastname: " + ln + "   Middlename " + mn + "<br />");
+        }
 }
 </script>
 <style>
@@ -63,12 +93,12 @@ function regis(){
   <input type="text" id="idn" placeholder="Enter ID number" >
   <br>
   Password:<br>
-  <input id="Passwd" name="Passwd" type="password" placeholder="Enter Password" class="" >
+  <input id="Passwd" name="Passwd" type="password" placeholder="Enter Password" class="" id="Passwd">
   <br><br>
-  <button class="button" button id="adm" onclick="log()">Log-in</button>
+  <button class="button" button id="adm" onclick="log(idn,Passwd)">Log-in</button>
   <button class="button" button id="hide">Register</button>
-</center>
-</div>
+</center
+></div>
 
 <center>
 <div id="register">
@@ -84,42 +114,33 @@ function regis(){
                   Middle name:<br>
                   <input type="text" id="mname" placeholder="Enter Middle name">
                   <br>
-                  E-mail Address:<br>
-                  <input type="text" id="EmailAdd" placeholder="Enter E-mail address">
-                  <br>
-                  Cellpone Number:<br>
-                  <input type="text" id="cpnumber" placeholder="Enter the active cellphone number">
-                  <br>
-                  <b>Gender</b><br>
-                      <input type="radio" name="gender" value="male"> Male<br>
-                      <input type="radio" name="gender" value="female"> Female<br>
-                  <br>
                </th>
                <th>
                     Password:<br>
-                    <input id="Passwd" name="Passwd" type="password" placeholder="Password" class="" >
+                    <input id="Passwd" id="Passwd" type="password" placeholder="Password" class="" >
                     <br>
                     Comform Password:<br>
-                    <input id="Passwd" name="Passwd" type="password" placeholder="Conform password" class="" >
-                    <br>
-                    Birthday:<br>
-                    <input type="text" id="pass" placeholder="Enter Birthday"> 
-                    <br>
-                    Age:<br>
-                    <input type="text" id="pass" placeholder="Enter Age"> 
-                    <br>
-                    Address:<br>
-                    <input type="text" id="pass" placeholder="Enter Address"> 
+                    <input id="Passwd" id="CPasswd" type="password" placeholder="Conform password" class="" >
                     <br>
                </th>
             </tr>
             <tr>
               <th colspan="2">
-                <button class="button" onclick="regis()" button id="show">Submit</button>
+                <button class="button" onclick="regis(fname,lname,mname,Passwd)" button id="show">Submit</button>
               </th>
             </tr>
       </table>
   </div>
+</center>
+
+<!–
+     -division for dashboard
+–>
+<center>
+<div id="record">
+  <p id="wee"></p>
+<button class="button" button id="Back">Back to Log-in</button>
+</div>
 </center>
 </body>
 </head>
